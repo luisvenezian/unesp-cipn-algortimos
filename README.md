@@ -19,6 +19,8 @@ This repository contains code developed during a master's degree program in natu
 
 Here are some visualizations of the optimization process:
 
-- ![3D Graph](3d.png): Visualization of the function \( f(x, y) = (1 − x)^2 + 100(y − x^2)^2 \), showcasing the results of the genetic algorithm optimization.
+Visualization of the function \( f(x, y) = (1 − x)^2 + 100(y − x^2)^2 \), showcasing the results of the genetic algorithm optimization.
+![3D Graph](3d.png)   
   
-- ![Fitness Graph](fitness.png): Evolution of the function result at each generation of the population initialized.
+Evolution of the function result at each generation of the population initialized.
+![Fitness Graph](fitness.png) 
