@@ -15,6 +15,9 @@ This repository contains code developed during a master's degree program in natu
 5. **Notebooks**:
    - `dispersao.ipynb` and `3d_and_series.ipynb` were used for ad-hoc graph plotting and do not significantly contribute to the project's value. However, they are kept for future reference and potential reuse.
 
+6. **Neural Networks**: This folder has the usage of the Perceptron architecture for classification of:
+   1. file percpetron.ipynb - classification of the outputs of an logical port type AND
+   2. file perceptron_common_datasets.ipynb - classification of some classic datasets such as Iris and Wine.
 ## Example Results
 
 Here are some visualizations of the optimization process:

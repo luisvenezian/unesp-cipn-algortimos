@@ -3,3 +3,19 @@
 __pycache__/
 # Jupyter Notebooks checkpoint files
 *.ipynb_checkpoints
+
+# Files from Scala projects on IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.class
+*.jar
+# Scala SBT and Play specific
+target/
+lib_managed/
+project/boot/
+project/plugins/project/
+# Scala IDE specific
+.cache-main/
+.cache-2.10/
+.worksheet/
