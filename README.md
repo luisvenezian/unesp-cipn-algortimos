@@ -17,7 +17,7 @@ This repository contains code developed during a master's degree program in natu
 
 6. **Neural Networks**: This folder has the usage of the Perceptron architecture for classification of:
    1. file percpetron.ipynb - classification of the outputs of an logical port type AND
-   2. file perceptron_common_datasets.ipynb - classification of some classic datasets such as Iris and Wine.
+   2. folder perceptron constains a full Scala program to compute classifications on Iris, Wine and Aids dataset from scratch, also there are some Python notebooks for data analysis on the training results.
 
 ## Example Results
 
