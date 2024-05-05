@@ -1,16 +1,11 @@
 package cipn
 
-trait Dataset {
-  val test: Data
-  val train: Data
-}
-
-object Iris extends Dataset{
-  private val path: String = "src/main/scala/iris.csv"
+object Wine extends Dataset{
+  private val path: String = "src/main/scala/wine.csv"
   val oneHotEncoding: Map[String, List[Double]] = Map(
-    "Iris-setosa" -> List(1.0, 0.0, 0.0),
-    "Iris-versicolor" -> List(0.0, 1.0, 0.0),
-    "Iris-virginica" -> List(0.0, 0.0, 1.0)
+    "1" -> List(1.0, 0.0, 0.0),
+    "2" -> List(0.0, 1.0, 0.0),
+    "3" -> List(0.0, 0.0, 1.0)
   )
   val oneHotDecoding: Map[List[Double], String] = oneHotEncoding.map(_.swap)
   val dataSets: List[Data] = {
@@ -18,7 +13,7 @@ object Iris extends Dataset{
     val lines: List[String] = source.getLines().toList
     val fileData: List[List[String]] = lines.map(_.split(",").toList)
     source.close()
-    Samples.shuffleAndDivide(fileData, test = 0.3).map(Data(_, 4, oneHotEncoding))
+    Samples.shuffleAndDivide(fileData, test = 0.3).map(Data(_, 13, oneHotEncoding))
   }
   val train: Data = dataSets(0)
   val test: Data = dataSets(1)

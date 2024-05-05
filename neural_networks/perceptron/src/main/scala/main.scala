@@ -2,7 +2,6 @@ package cipn
 
 @main
 def main(): Unit = {
-  val network: MultiOutputPerceptron = MultiOutputPerceptron(Iris)
+  val network: MultiOutputPerceptron = MultiOutputPerceptron(Aids)
   network.train()
-  print(network.validate(network.DatasetKind.Validation))
 }
