@@ -81,8 +81,8 @@ def bfo_algorithm(
             sorted_indices = np.argsort(costs)
             population = population[sorted_indices]
             costs = costs[sorted_indices]
-            population[S//2:] = population[:S//2] + np.random.uniform(-1, 1, (S//2, p))
-            costs[S//2:] = np.apply_along_axis(objective_function, 1, population[S//2:])
+            population[S//2:] = population[:S//2] + population[:S//2]
+            costs[S//2:] = costs[:S//2] + costs[:S//2]
         
         # Elimination-dispersal step
         for i in range(S):
