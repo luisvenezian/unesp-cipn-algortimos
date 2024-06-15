@@ -33,7 +33,7 @@ class GeneticAlgorithm(Generic[C]):
     
     def pick_tournament(self, num_participants: int) -> Tuple[C, C]:
         participants = choices(self.population, k=num_participants)
-        return tuple(nlargest(2, participants, key=self.fitness_key))
+        return tuple(nlargest(2, participants, key=self.fitness_key))   
                  
     def _reproduce_and_replace(self) -> None:
         new_population = []
@@ -77,5 +77,24 @@ class GeneticAlgorithm(Generic[C]):
             highest = max(self.population, key=self.fitness_key)
             if highest.fitness() > best.fitness():
                 best = highest
+                
+        return best, best_fitness_series
+    
+    def runToMinimize(self) -> C:
+        best = min(self.population, key=self.fitness_key)
+        best_fitness_series = [best.fitness()]
+        for generation in range(self.max_generations):
+            best_fitness_series.append([best.x, best.y])
+            # Check if the threshold was reached and then return the best individual
+            if best.fitness() <= self.threshold:
+                return best
+            
+            # Produces next generation
+            print(f'Generation {generation} Best {best.fitness()} Avg {mean(map(self.fitness_key, self.population))}')
+            self._reproduce_and_replace()
+            self._mutate()
+            lowest = min(self.population, key=self.fitness_key)
+            if lowest.fitness() < best.fitness():
+                best = lowest
                 
         return best, best_fitness_series
